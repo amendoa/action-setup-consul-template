@@ -18,3 +18,7 @@ steps:
     with:
       version: 0.27.0
 ```
+
+## How to contribute?
+
+Check out the [contributor guide](/CONTRIBUTING.md).
