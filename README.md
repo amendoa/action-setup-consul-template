@@ -4,6 +4,8 @@
 
 This action provides the ability to install `consul-template` cli on your github actions Workflow
 
+_:raised_hand_with_fingers_splayed: Only for linux and macOS runners_
+
 ## Inputs
 
 | Name    | Description                        | Type     | Required |
