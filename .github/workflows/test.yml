@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    tags-ignore:
+      - "*.*"
+    branches:
+      - "**"
+
+jobs:
+  test_on_runner:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, macos-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: ./
+        with:
+          version: 0.26.0
