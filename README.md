@@ -2,7 +2,7 @@
 
 # Setup consul-template
 
-This action provides the ability to setup your Github Actions workflow with a specific version of [consul-template](https://github.com/hashicorp/consul-template) CLI
+This action provides the ability to setup your Github Actions workflow with a specific version of [consul-template](https://github.com/hashicorp/consul-template) CLI.
 
 _:raised_hand_with_fingers_splayed: Only for linux and macOS runners_
 
