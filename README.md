@@ -10,7 +10,7 @@ _:raised_hand_with_fingers_splayed: Only for linux and macOS runners_
 
 | Name    | Description                        | Type      | Example | Required |
 | ------- | ---------------------------------- | --------- | ------- | -------- |
-| version | consul-template version to install | `numeric` | 0.27.0  | `false`  |
+| version | consul-template version to install | `semver` | 0.27.0  | `false`  |
 
 ## Usage
 
