@@ -1,5 +1,8 @@
 name: Setup Consul Template CLI
 description: Downloads and move consul-template binary to the /usr/local/bin/ directory
+branding:
+  icon: check
+  color: blue
 inputs:
   version:
     description: Consul Template version to install
