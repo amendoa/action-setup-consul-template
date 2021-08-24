@@ -5,6 +5,7 @@ on:
       - "*.*"
     branches:
       - "**"
+      - "!next"
 
 jobs:
   test_on_runner:
