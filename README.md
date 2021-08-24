@@ -14,7 +14,7 @@ This action provides the ability to install `consul-template` cli on your github
 
 ```yml
 steps:
-  - uses: amendoa/action-setup-consul-template
+  - uses: amendoa/action-setup-consul-template@v1
     with:
       version: 0.27.0
 ```
