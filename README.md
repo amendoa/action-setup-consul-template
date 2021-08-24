@@ -1,4 +1,4 @@
-[![Delivery](https://github.com/amendoa/action-setup-consul-template/actions/workflows/delivery.yml/badge.svg)](https://github.com/amendoa/action-setup-consul-template/actions/workflows/delivery.yml)
+[![Delivery](https://github.com/amendoa/action-setup-consul-template/actions/workflows/delivery.yml/badge.svg?branch=next)](https://github.com/amendoa/action-setup-consul-template/actions/workflows/delivery.yml)
 
 # Setup consul-template
 
