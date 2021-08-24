@@ -23,12 +23,12 @@ runs:
           exit 1
         fi
 
-    - name: Download .tgz from hashicorp CDN
-      run: wget https://releases.hashicorp.com/consul-template/${{ inputs.version }}/consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+    - name: Download .zip from hashicorp CDN
+      run: wget https://releases.hashicorp.com/consul-template/${{ inputs.version }}/consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.zip
       shell: bash
 
-    - name: Extract .tgz file
-      run: tar xzf consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+    - name: Extract .zip file
+      run: unzip consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.zip
       shell: bash
 
     - name: Move consul-template binary to /usr/local/bin directory
@@ -36,5 +36,5 @@ runs:
       shell: bash
 
     - name: Remove residual artifacts
-      run: rm -rf consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+      run: rm -rf consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.zip
       shell: bash
