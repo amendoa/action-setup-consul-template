@@ -1,0 +1,12 @@
+titleAndCommits: true
+allowMergeCommits: true
+anyCommit: true
+types:
+  - feat
+  - fix
+  - ops
+  - docs
+  - style
+  - rafactor
+  - test
+  - chore
