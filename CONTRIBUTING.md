@@ -16,3 +16,5 @@ git checkout -b feat/awesome-feature
 ```
 
 3. Now do the best you know, push to the repository, submit a pull request and follow status checks :)
+
+:raised_hand_with_fingers_splayed: you must use [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
