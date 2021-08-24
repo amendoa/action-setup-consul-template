@@ -19,7 +19,7 @@ runs:
         elif [ $OS == "linux" ]; then
           echo "::set-output name=architecture::linux_amd64"
         else
-          echo "${{ runner.os }} is not supported by this action"
+          echo "${{ runner.os }} is not supported yet"
           exit 1
         fi
 
