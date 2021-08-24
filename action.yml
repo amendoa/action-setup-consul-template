@@ -1,0 +1,40 @@
+name: Setup consul template cli
+description: Downloads consul-template binary and move to local bin directory
+inputs:
+  version:
+    description: Consul template version
+    required: false
+    default: 0.27.0
+runs:
+  using: composite
+  steps:
+    - name: Export vars
+      id: vars
+      shell: bash
+      run: |
+        OS=$(echo "${{ runner.os }}" | tr "[:upper:]" "[:lower:]")
+
+        if [ $OS == "macos" ]; then
+          echo "::set-output name=architecture::darwin_amd64"
+        elif [ $OS == "linux" ]; then
+          echo "::set-output name=architecture::linux_amd64"
+        else
+          echo "${{ runner.os }} is not supported by this action"
+          exit 1
+        fi
+
+    - name: Download .tgz from hashicorp CDN
+      run: wget https://releases.hashicorp.com/consul-template/${{ inputs.version }}/consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+      shell: bash
+
+    - name: Extract .tgz file
+      run: tar xzf consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+      shell: bash
+
+    - name: Move consul-template binary to /usr/local/bin directory
+      run: sudo mv consul-template /usr/local/bin/consul-template
+      shell: bash
+
+    - name: Remove residual artifacts
+      run: rm -rf consul-template_${{ inputs.version }}_${{ steps.vars.outputs.architecture }}.tgz
+      shell: bash
