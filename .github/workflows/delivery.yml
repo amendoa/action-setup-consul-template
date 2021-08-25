@@ -14,17 +14,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v5.6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create a GitHub release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ steps.tag_version.outputs.new_tag }}
-          release_name: v1
-          body: ${{ steps.tag_version.outputs.changelog }}
+          tag_name: v1
+      # - name: Bump version and push tag
+      #   id: tag_version
+      #   uses: mathieudutour/github-tag-action@v5.6
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Create a GitHub release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: v1
+      #     release_name: v1
+      #     body: ${{ steps.tag_version.outputs.changelog }}
